@@ -27,11 +27,33 @@ class sortingAlgorithms:
     def bubble(self, array): # Bubble Sort
         a = len(array)
         print(array)
+        count = 0
         for i in range(a):
             for k in range(a - i - 1):
                 if array[k] > array[k+1]:
                     array[k], array[k+1] = array[k+1], array[k]
                     print(array)
+                    count += 1
+        print(count)
+
+
+    def cocktail(self, array): # Cocktail Sort
+        a = len(array)
+        print(array)
+        count = 0
+        for i in range(a):
+            for k in range(a - i - 1):
+                if array[k] > array[k+1]:
+                    array[k], array[k+1] = array[k+1], array[k]
+                    print(array)
+                    count += 1
+
+            for k in range(a - i - 1, 0, -1):
+                if array[k] < array[k-1]:
+                    array[k], array[k-1] = array[k-1], array[k]
+                    print(array)
+                    count += 1
+        print(count)
 
 
 
