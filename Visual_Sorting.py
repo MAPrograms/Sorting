@@ -1,4 +1,3 @@
-
 class sortingAlgorithms:
 
     def selectsort(self):
@@ -22,4 +21,3 @@ class sortingAlgorithms:
 
         print(array_sorted)
 
-sortingAlgorithms.selectsort()
