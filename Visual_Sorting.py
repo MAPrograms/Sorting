@@ -3,6 +3,7 @@ class sortingAlgorithms:
     def select(self, array): # Select Sort
         array_sorted = []
         min = 0
+        print(array)
         for i in range(len(array)):
             for numbers in array:
                 if numbers > min:
@@ -16,8 +17,13 @@ class sortingAlgorithms:
 
 
     def bubble(self, array): # Bubble Sort
-        for i in range(len(array)):
-            for k in range(len(array) - i - 1):
-                pass
+        a = len(array)
+        print(array)
+        for i in range(a):
+            for k in range(a - i - 1):
+                if array[k] > array[k+1]:
+                    array[k], array[k+1] = array[k+1], array[k]
+                    print(array)
+
 
 
