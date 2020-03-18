@@ -4,5 +4,8 @@ array = [4, 2, 5, 7, 1, 3]
 
 sorting = sortingAlgorithms()
 
-sorting.bubble(array)
+#sorting.newarray(10)
 
+#sorting.select(array)
+
+sorting.bubble(array)
