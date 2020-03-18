@@ -1,4 +1,11 @@
+import random
+
 class sortingAlgorithms:
+
+    def newarray(self, array, x):
+        array.clear()
+        for i in range(x):
+            array.insert(0, random.randint(1, 9))
 
     def select(self, array): # Select Sort
         array_sorted = []
