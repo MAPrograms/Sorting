@@ -1,23 +1,23 @@
 class sortingAlgorithms:
 
-    def selectsort(self):
-        array = [4, 2, 5, 7, 1, 3]
+    def select(self, array): # Select Sort
         array_sorted = []
-        sort = True
         min = 0
-        while sort:
+        for i in range(len(array)):
             for numbers in array:
                 if numbers > min:
                     min = numbers
             if min != 0:
                 array_sorted.insert(0, min)
 
-            if len(array) != 1:
-                array.remove(min)
-                print(array_sorted)
-            else:
-                sort = False
+            array.remove(min)
+            print(array_sorted)
             min = 0
 
-        print(array_sorted)
+
+    def bubble(self, array): # Bubble Sort
+        for i in range(len(array)):
+            for k in range(len(array) - i - 1):
+                pass
+
 
