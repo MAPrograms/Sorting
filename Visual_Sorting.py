@@ -2,7 +2,7 @@ import random
 
 class sortingAlgorithms:
 
-    def newarray(self, array, x):
+    def newarray(self, array, x): # Makes a new array
         array.clear()
         for i in range(x):
             array.insert(0, random.randint(1, 9))
