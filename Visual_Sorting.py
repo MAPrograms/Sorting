@@ -1,11 +1,11 @@
-import random
+import random, pygame, sys
 
 class sortingAlgorithms:
 
-    def newarray(self, array, x): # Makes a new array
+    def newarray(self, array, bars, max): # Makes a new array
         array.clear()
-        for i in range(x):
-            array.insert(0, random.randint(1, 9))
+        for i in range(bars):
+            array.insert(0, random.randint(1, max))
 
 
     def select(self, array): # Select Sort
@@ -27,33 +27,39 @@ class sortingAlgorithms:
     def bubble(self, array): # Bubble Sort
         a = len(array)
         print(array)
-        count = 0
         for i in range(a):
             for k in range(a - i - 1):
                 if array[k] > array[k+1]:
                     array[k], array[k+1] = array[k+1], array[k]
-                    print(array)
-                    count += 1
-        print(count)
+            print(array)
 
 
     def cocktail(self, array): # Cocktail Sort
         a = len(array)
         print(array)
-        count = 0
         for i in range(a):
             for k in range(a - i - 1):
                 if array[k] > array[k+1]:
                     array[k], array[k+1] = array[k+1], array[k]
-                    print(array)
-                    count += 1
+
 
             for k in range(a - i - 1, 0, -1):
                 if array[k] < array[k-1]:
                     array[k], array[k-1] = array[k-1], array[k]
-                    print(array)
-                    count += 1
-        print(count)
+            print(array)
 
 
+class bars:
 
+    def __init__(self, height=0, width=10, windowWidth=800, windowHeight=600):
+        self.height = height
+        self.width = width
+        self.x = windowWidth / 8
+        self.y = windowHeight - height
+
+        self.bar = pygame.Surface((self.width, self.height),
+                                     pygame.SRCALPHA)
+        self.bar.fill((255, 255, 255))
+
+    def render(self, window):
+        window.blit(self.bar, (self.x, self.y))
