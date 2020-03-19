@@ -29,7 +29,22 @@ while True:
             pygame.quit()
             sys.exit()
 
-    window.fill((0, 0, 0))
+    window.fill((56, 56, 56))
+
+    # Creates the top bar
+    topbar = rectangle(grey, (topbarX, topbarY, windowWidth, topbarHeight))
+    topbar.render(window)
+
+    # Creates the underline bar
+    underlinebar = rectangle(blue, (underlinebarX, underlinebarY, windowWidth, underlinebarHeight))
+    underlinebar.render(window)
+
+    # Creates the different buttons
+    sortarraybtn = rectangle(blue, (sortarraybtnX, sortarraybtnY, btnWidth, btnHeight))
+    sortarraybtn.render(window)
+
+    newarraybtn = rectangle(blue, (newarraybtnX, newarraybtnY, btnWidth, btnHeight))
+    newarraybtn.render(window)
 
     if len(bar_list) != len(array):
         for i in array:
@@ -39,7 +54,7 @@ while True:
 
     for j in range(len(bar_list)):
         if done == True:
-            bar_list[j].x += bar_list[j-1].x - 80
+            bar_list[j].x = bar_list[j-1].x + bar_list[j].width + 5
         bar_list[j].render(window)
 
     done = False
