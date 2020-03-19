@@ -1,5 +1,6 @@
 from Visual_Sorting import *
 
+done = False
 # Pygame variables
 windowWidth = 800
 windowHeight = 600
@@ -28,14 +29,20 @@ while True:
             pygame.quit()
             sys.exit()
 
+    window.fill((0, 0, 0))
+
     if len(bar_list) != len(array):
         for i in array:
             bar = bars(height=i)
             bar_list.append(bar)
+        done = True
 
-        for j in range(len(bar_list)):
-            bar_list[j].x += bar_list[j].width + 5
-            bar_list[j].render(window)
+    for j in range(len(bar_list)):
+        if done == True:
+            bar_list[j].x += bar_list[j-1].x - 80
+        bar_list[j].render(window)
+
+    done = False
 
     pygame.display.update()
 
