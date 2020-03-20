@@ -79,15 +79,15 @@ while True:
                     mousebtnup = False
 
     sorting.bubble(array)
-     #for l in range(len(array)):
-     #    if array[l] != bar_list[l].height:
-     #        bar_list.clear()
-     #        c = 0
-     #        for i in array:
-     #            bar = bars(height=i, spacing=5, width=5, a=len(array), windowWidth=windowWidth, windowHeight=windowHeight)
-     #            bar_list.append(bar)
-     #            bar_list[c].x = bar_list[c - 1].x + bar_list[c].width + bar_list[c].spacing
-     #            c += 1
+    # for l in range(len(array)):
+    #     if array[l] != bar_list[l].height:
+    #         bar_list.clear()
+    #         c = 0
+    #         for i in array:
+    #             bar = bars(height=i, spacing=5, width=5, a=len(array), windowWidth=windowWidth, windowHeight=windowHeight)
+    #             bar_list.append(bar)
+    #             bar_list[c].x = bar_list[c - 1].x + bar_list[c].width + bar_list[c].spacing
+    #             c += 1
     for l in range(len(array)):
         if array[l] != bar_list[l].height:
             bar_list[l].x, bar_list[l].x = bar_list[l].x, bar_list[l].x
