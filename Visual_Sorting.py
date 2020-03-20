@@ -65,3 +65,61 @@ class bars:
 
     def render(self, window):
         window.blit(self.bar, (self.x, self.y))
+
+# Variables for color
+grey = (98, 98, 98)
+blue = (0, 162, 232)
+
+# Variables for the top bar
+topbarX = 0
+topbarY = 0
+topbarHeight = 70
+
+# Variables for underline bar
+underlinebarX = 0
+underlinebarY = 70
+underlinebarHeight = 3
+
+
+# Variables for the buttons
+btnHeight = 20
+btnWidth = 70
+pygame.font.init()
+font = pygame.font.Font('freesansbold.ttf', 12)
+
+# Variables for the sort array btn
+sortarraybtnX = 15
+sortarraybtnY = 25
+
+# Variables for new array btn
+newarraybtnX = 100
+newarraybtnY = 25
+
+# Create rectangles
+class rectangle:
+
+    def __init__(self, color, rect):
+        self.color = color
+        self.rectX = rect[0]
+        self.recty = rect[1]
+        self.width = rect[2]
+        self.height = rect[3]
+
+    def render(self, window):
+        pygame.draw.rect(window, self.color, (self.rectX, self.recty, self.width, self.height))
+
+# Create Buttons
+class btn:
+
+    def __init__(self, color, btn):
+        self.color = color
+        self.btnX = btn[0]
+        self.btny = btn[1]
+        self.width = btn[2]
+        self.height = btn[3]
+        self.text = btn[4]
+
+    def render(self, window):
+        pygame.draw.rect(window, self.color, (self.btnX, self.btny, self.width, self.height))
+        text = font.render(self.text, True, (255, 255, 255))
+        window.blit(text, (self.btnX + (self.width / 2) - (text.get_width() / 2), self.btny + (self.height / 2) - (text.get_height() / 2)))
