@@ -52,10 +52,10 @@ while True:
     underlinebar.render(window)
 
     # Creates the different buttons
-    sortarraybtn = btn(blue, (sortarraybtnX, sortarraybtnY, btnWidth, btnHeight, "Sort Array"))
+    sortarraybtn = btn(blue, (sortarraybtnX, sortarraybtnY, btnWidth, btnHeight), "Sort Array")
     sortarraybtn.render(window)
 
-    newarraybtn = btn(blue, (newarraybtnX, newarraybtnY, btnWidth, btnHeight, "New Array"))
+    newarraybtn = btn(blue, (newarraybtnX, newarraybtnY, btnWidth, btnHeight), "New Array")
     newarraybtn.render(window)
 
     # To make sure it only runs once per mouse click
@@ -75,19 +75,22 @@ while True:
         if event.button == 1 and mousebtnup:
             if event.pos[0] >= sortarraybtnX and event.pos[0] <= sortarraybtnX + sortarraybtn.width:
                 if event.pos[1] >= sortarraybtnY and event.pos[1] <= sortarraybtnY + sortarraybtn.height:
-                    sorting.selection(array)
+                    #sorting.selection(array)
+                    #sorting.bubble(array)
+                    for i in range(len(array)):
+                        sorting.cocktail(array)
                     mousebtnup = False
 
-    sorting.bubble(array)
-    # for l in range(len(array)):
-    #     if array[l] != bar_list[l].height:
-    #         bar_list.clear()
-    #         c = 0
-    #         for i in array:
-    #             bar = bars(height=i, spacing=5, width=5, a=len(array), windowWidth=windowWidth, windowHeight=windowHeight)
-    #             bar_list.append(bar)
-    #             bar_list[c].x = bar_list[c - 1].x + bar_list[c].width + bar_list[c].spacing
-    #             c += 1
+    #sorting.bubble(array)
+    for l in range(len(array)):
+        if array[l] != bar_list[l].height:
+            bar_list.clear()
+            c = 0
+            for i in array:
+                bar = bars(height=i, spacing=5, width=5, a=len(array), windowWidth=windowWidth, windowHeight=windowHeight)
+                bar_list.append(bar)
+                bar_list[c].x = bar_list[c - 1].x + bar_list[c].width + bar_list[c].spacing
+                c += 1
     for l in range(len(array)):
         if array[l] != bar_list[l].height:
             bar_list[l].x, bar_list[l].x = bar_list[l].x, bar_list[l].x

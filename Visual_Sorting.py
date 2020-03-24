@@ -95,6 +95,10 @@ sortarraybtnY = 25
 newarraybtnX = 100
 newarraybtnY = 25
 
+# Variables for the slider
+
+# Variables for btn on slider
+
 # Create rectangles
 class rectangle:
 
@@ -111,13 +115,13 @@ class rectangle:
 # Create Buttons
 class btn:
 
-    def __init__(self, color, btn):
+    def __init__(self, color, btn, text):
         self.color = color
         self.btnX = btn[0]
         self.btny = btn[1]
         self.width = btn[2]
         self.height = btn[3]
-        self.text = btn[4]
+        self.text = text
 
     def render(self, window):
         pygame.draw.rect(window, self.color, (self.btnX, self.btny, self.width, self.height))
