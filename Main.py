@@ -7,6 +7,7 @@ windowHeight = 768
 pygame.init()
 window = pygame.display.set_mode((windowWidth, windowHeight))
 
+pygame.display.set_caption("Sorting algorithms")
 FPS = 15
 clock = pygame.time.Clock()
 
