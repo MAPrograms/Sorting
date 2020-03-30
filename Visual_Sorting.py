@@ -69,6 +69,7 @@ class bars:
 # Variables for color
 grey = (98, 98, 98)
 blue = (0, 162, 232)
+white = (255, 255, 255)
 
 # Variables for the top bar
 topbarX = 0
@@ -82,8 +83,8 @@ underlinebarHeight = 3
 
 
 # Variables for the buttons
-btnHeight = 20
 btnWidth = 70
+btnHeight = 20
 pygame.font.init()
 font = pygame.font.Font('freesansbold.ttf', 12)
 
@@ -96,8 +97,22 @@ newarraybtnX = 100
 newarraybtnY = 25
 
 # Variables for the slider
+sliderX = 620
+sliderY = 35
+sliderwidth = 136
+sliderheight = 8
 
 # Variables for btn on slider
+sliderbtnX = 620
+sliderbtnY = 31
+sliderbtnwidth = 6
+sliderbtnheight = 16
+start = 10
+
+# Variables for text above slider
+slidertextX = 620
+slidertextY = 15
+arraysizetext = 'Array size: '
 
 # Create rectangles
 class rectangle:
@@ -125,5 +140,9 @@ class btn:
 
     def render(self, window):
         pygame.draw.rect(window, self.color, (self.btnX, self.btny, self.width, self.height))
-        text = font.render(self.text, True, (255, 255, 255))
+        text = font.render(self.text, True, white)
         window.blit(text, (self.btnX + (self.width / 2) - (text.get_width() / 2), self.btny + (self.height / 2) - (text.get_height() / 2)))
+
+def arraySizeFromSlider(sliderbtnX, start):
+    newArraySize = sliderbtnX - 620 + start
+    return newArraySize
